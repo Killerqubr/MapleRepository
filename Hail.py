@@ -6,8 +6,6 @@ import numpy as np
 import wx
 
 class hail:
-    
-    __virsion__ = '0.1b'
 
     # Private Values
     __x = []
@@ -83,7 +81,7 @@ class hail:
         self.__St = 0
         self.singal(self.__Count[self.__Ms.index(min(self.__Ms))],m=True)
         self.__plot(self.__x,self.__y)
-     
+
         plt.show()
     
     # Private Methods
@@ -103,4 +101,4 @@ class hail:
 if __name__ == '__main__':
     f = hail()
     f.singal(21)
-    f.multiple(10,50)
+  #  f.multiple(10,50)
