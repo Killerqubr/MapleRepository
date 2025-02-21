@@ -4,9 +4,11 @@
 from matplotlib import pyplot as plt
 import numpy as np
 
-class hail:
+class run:
     
     def __init__(self):
+        
+        self.Hlib = self.lib()
 
         self.x = []
         self.y = []
@@ -15,7 +17,7 @@ class hail:
         self.MSu = []     # Max Steps Used
         self.Ms = []      # Most Stable
     
-    # Pubilc
+    # Pubilc    
     def Singal(self, i, m=False):
         i = int(i)
         self.__resin = i
@@ -23,7 +25,7 @@ class hail:
         self.x.append(self.step)
         self.y.append(i)
         while i >= 2:
-            i = self.ParCal(i)
+            i = self.Hlib.ParCal(i)
             self.step += 1
             self.x.append(self.step)
             self.y.append(i)
@@ -32,7 +34,7 @@ class hail:
             plt.title(f'Singal Number {self.__resin}',loc='left')
             plt.xlabel(f'Max Value Index : {self.x[self.y.index(max(self.y))]} # {len(self.x)-1} Steps Used',loc='left')
             plt.ylabel(f'Max Value : {max(self.y)} # Variance : {var}',loc='bottom')
-            self.__plot(self.x,self.y)
+            self(self.x,self.y)
             plt.show()
         else:
             self.Mv.append(max(self.y))
@@ -50,7 +52,7 @@ class hail:
         for l in range(n1,n2+1):
             self.step = l
             self.Singal(l,m=True)
-            self.__plot(self.x,self.y)
+            self(self.x,self.y)
         
         # Area 2
         plt.subplot(222)
@@ -65,39 +67,34 @@ class hail:
         plt.title(f'Max Value {self.__Count[self.Mv.index(max(self.Mv))]} # {max(self.Mv)}',loc='left')
         self.step = 0
         self.Singal(self.__Count[self.Mv.index(max(self.Mv))],m=True)
-        self.__plot(self.x,self.y)
+        self(self.x,self.y)
         
         # Area 3
         plt.subplot(223)
         plt.xlabel(f'Max Steps {self.__Count[self.MSu.index(max(self.MSu))]} # {max(self.MSu)}',loc = 'left')
         self.step = 0
         self.Singal(self.__Count[self.MSu.index(max(self.MSu))],m=True)
-        self.__plot(self.x,self.y)
+        self(self.x,self.y)
         
         # Area 4
         plt.subplot(224)
         plt.xlabel(f'Min Variance {self.__Count[self.Ms.index(min(self.Ms))]} # {min(self.Ms)}',loc = 'left')
         self.step = 0
         self.Singal(self.__Count[self.Ms.index(min(self.Ms))],m=True)
-        self.__plot(self.x,self.y)
+        self(self.x,self.y)
 
         plt.show()
     
-    # Private Methods
+    class lib():
     
-    def ParCal(self,i):
-        if ( i % 2 ) == 0:
-            Re = i / 2
-            return Re
-        else:
-            Re = i * 3 + 1
-            return Re
+        def ParCal(self,i):
+            if ( i % 2 ) == 0:
+                Re = i / 2
+                return Re
+            else:
+                Re = i * 3 + 1
+                return Re
             
-    def __plot(self,a,b):
-        plt.grid()
-        plt.plot(a,b,'#BF514E',marker='s')
-    
-if __name__ == '__main__':
-    f = hail()
-    f.Singal(21.12)
-    f.Multi(10,50)
+        def plot(self,a,b):
+            plt.grid()
+            plt.plot(a,b,'#BF514E',marker='s')
