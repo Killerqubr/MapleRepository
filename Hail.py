@@ -83,7 +83,7 @@ class hail:
         self.__St = 0
         self.singal(self.__Count[self.__Ms.index(min(self.__Ms))],m=True)
         self.__plot(self.__x,self.__y)
-     
+
         plt.show()
     
     # Private Methods

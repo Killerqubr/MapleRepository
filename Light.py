@@ -125,5 +125,5 @@ class pylight:
 
 #if __name__ == '__main__':
 f = pylight()
-f.light([3,3],20,[50,50],pltshow=True,datashow=True)
+f.light([1,1],2,[50,50],pltshow=True,datashow=True)
     
