@@ -1,6 +1,8 @@
-# MapleRepository
-This Repository is used to reposit some Python Projects and Files which I made while learning Python. Welcome to point out deficiencies of my files!
+你好！这里是Killerqubr！ 
+Hello! Here's Killerqubr!
 
-### Hi!
-#### I'm a little programmer from China.
-#### 16 Years old now, living in Zigong, Suchuan China.
+我是一名来自中国的高中生，现居四川。 
+I'm a senior high student from China,living in the SiChuan Provice.
+
+热爱计算机语言，现在正在学习Python. 
+I love computer language, and on the Python Learning.

@@ -1,7 +1,10 @@
+import datetime
+
 class BisectionMethod:
     
     def __init__(self, Epsilon, a, b, func):
         
+        ST = datetime.datetime.now()
         print(f'<INFO> Step 1 - Definding f(x): {func}')
         self.InputChecking(0,f=func)
 
